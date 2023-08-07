@@ -1,0 +1,19 @@
+﻿@model GetWeatherData
+
+@using (Html.BeginForm("GetWeather", "Weather"))
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+     <div class="row form-group">
+        @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+     <div class="col-10 input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+     </div>
+     </div>
+         <div class="row form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit">Submit City</button>
+                    </div>
+         </div>
+}

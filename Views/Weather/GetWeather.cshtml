@@ -1,0 +1,108 @@
+﻿@model WeatherApi_Core.Models.GetWeatherData
+
+@{
+    ViewData["Title"] = "GetWeather";
+}
+
+<h1>GetWeather</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.Lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.Lon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.Localtime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location.TzId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.TempC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.TempF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.Condition.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.LastUpdateOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.Wind)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.Humidity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current.Cloud)
+            </th>
+            <th>
+                @Html.Raw("Weather Status")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => Model.City)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Location.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Location.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Location.Lat)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Location.Lon)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Location.Localtime)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Location.TzId)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.TempC)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.TempF)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.Condition.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.LastUpdateOn)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.Wind)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.Humidity)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.Current.Cloud)
+            </td>
+            <td>
+                <img src ="@Model.Current.Condition.Icon" alt="Weather Icon" />
+            </td>
+        </tr>
+    </tbody>
+</table>
