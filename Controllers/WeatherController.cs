@@ -21,23 +21,31 @@ namespace WeatherApi_Core.Controllers
 
         public async Task<IActionResult> GetWeather(GetWeatherData getWeatherData)
         {
-            var weatherData = await _weatherServices.GetCurrentWeather(getWeatherData.City);
-            GetWeatherData GetWeatherData = new GetWeatherData();
-
-            GetWeatherData.City = weatherData.Location.Name;
-
-            GetWeatherData.Location = weatherData.Location;
-
-            GetWeatherData.Current = weatherData.Current;
-
-            GetWeatherData.Current.Condition = weatherData.Current.Condition;
-
-            if (weatherData != null)
+            if (ModelState.IsValid)
             {
-                Console.WriteLine("response : " + weatherData);
-                return View(GetWeatherData);
+                var weatherData = await _weatherServices.GetCurrentWeather(getWeatherData.City);
+                GetWeatherData GetWeatherData = new GetWeatherData();
+
+                GetWeatherData.City = weatherData.Location.Name;
+
+                GetWeatherData.Location = weatherData.Location;
+
+                GetWeatherData.Current = weatherData.Current;
+
+                GetWeatherData.Current.Condition = weatherData.Current.Condition;
+
+                if (weatherData != null)
+                {
+                    Console.WriteLine("response : " + weatherData);
+                    return View(GetWeatherData);
+                }
+                return View("Error");
             }
-            return View("Error");
+            else 
+            {
+                ModelState.AddModelError("CustomError", "Required Feild");
+                return View("Index");
+            }
         }
     }
 }
