@@ -37,6 +37,7 @@ namespace WeatherApi_Core.Controllers
                 if (weatherData != null)
                 {
                     Console.WriteLine("response : " + weatherData);
+                    ViewBag.mssg = "SHOWING WEATHER UPDATE FOR : " + getWeatherData.City;
                     return View(GetWeatherData);
                 }
                 return View("Error");
