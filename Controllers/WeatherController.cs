@@ -21,7 +21,7 @@ namespace WeatherApi_Core.Controllers
 
         public async Task<IActionResult> GetWeather(GetWeatherData getWeatherData)
         {
-            if (ModelState.IsValid)
+            if (getWeatherData.City != null)
             {
                 var weatherData = await _weatherServices.GetCurrentWeather(getWeatherData.City);
                 GetWeatherData GetWeatherData = new GetWeatherData();
