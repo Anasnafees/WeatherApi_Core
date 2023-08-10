@@ -6,9 +6,9 @@ namespace WeatherApi_Core.Controllers
 {
     public class WeatherController : Controller
     {
-        private readonly GetWeatherService _weatherServices;
+        private readonly IGetWeatherService _weatherServices;
 
-        public WeatherController(GetWeatherService getWeatherService)
+        public WeatherController(IGetWeatherService getWeatherService)
         {
             _weatherServices = getWeatherService;
         }
@@ -24,18 +24,18 @@ namespace WeatherApi_Core.Controllers
             if (getWeatherData.City != null)
             {
                 var weatherData = await _weatherServices.GetCurrentWeather(getWeatherData.City);
-                GetWeatherData GetWeatherData = new GetWeatherData();
-
-                GetWeatherData.City = weatherData.Location.Name;
-
-                GetWeatherData.Location = weatherData.Location;
-
-                GetWeatherData.Current = weatherData.Current;
-
-                GetWeatherData.Current.Condition = weatherData.Current.Condition;
-
                 if (weatherData != null)
                 {
+                    GetWeatherData GetWeatherData = new GetWeatherData();
+
+                    GetWeatherData.City = weatherData.Location.Name;
+
+                    GetWeatherData.Location = weatherData.Location;
+
+                    GetWeatherData.Current = weatherData.Current;
+
+                    GetWeatherData.Current.Condition = weatherData.Current.Condition;
+
                     Console.WriteLine("response : " + weatherData);
                     ViewBag.mssg = "SHOWING WEATHER UPDATE FOR : " + getWeatherData.City;
                     return View(GetWeatherData);

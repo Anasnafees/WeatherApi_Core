@@ -20,6 +20,18 @@ WeatherApi Docs = https://www.weatherapi.com/docs/
 
 Bind The Value Of The Secret Key To The Model Class And Added Model InterFace In The Dependency(Program.cs)
 
+==========================================================================================================================================
+
+Added xUnit Project For Basic Unit Testing Of The Application :
+Added Interface Of GetWeatherServices To The Dependency Injection
+Using Mock.
+
+Reference = https://code-maze.com/aspnetcore-unit-testing-xunit/
+
+[Fact] – attribute states that the method should be executed by the test runner
+[Theory] – attribute implies that we are going to send some parameters to our testing code. So, it is similar to the [Fact] attribute, because it states that the method should be executed by the test runner, but additionally implies that we are going to send parameters to the test method
+[InlineData] – attribute provides those parameters we are sending to the test method. If we are using the [Theory] attribute, we have to use the [InlineData] as well
+
 
 By Anas Nafees
 Contact : anasnafees1802@gmail.com

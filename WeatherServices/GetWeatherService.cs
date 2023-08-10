@@ -2,9 +2,8 @@
 
 namespace WeatherApi_Core.WeatherServices
 {
-    public class GetWeatherService
+    public class GetWeatherService : IGetWeatherService
     {
-
         private readonly IWeatherApiConfiguration _weatherApiConfiguration;
         //Used IHttpClientFactory To Create An Instance For HttpClient Instance//
         private readonly IHttpClientFactory _httpClientFactory;
@@ -21,19 +20,19 @@ namespace WeatherApi_Core.WeatherServices
             string CurrentApiUrl = $"http://api.weatherapi.com/v1/current.json?Key={_weatherApiConfiguration.ApiKey}&q={city}";
             var GetHttpClient = _httpClientFactory.CreateClient(); //HttpClient Instance
 
-            try 
+            try
             {
                 HttpResponseMessage response = await GetHttpClient.GetAsync(CurrentApiUrl);
                 response.EnsureSuccessStatusCode();
                 var weatherData = await response.Content.ReadFromJsonAsync<GetWeatherData>();
                 return weatherData;
             }
-            catch (HttpRequestException ex) 
+            catch (HttpRequestException ex)
             {
                 Console.WriteLine(ex.Message);
                 return null;
             }
-
         }
+
     }
 }

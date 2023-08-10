@@ -11,7 +11,7 @@ var weatherapiconfig = new WeatherApiConfiguration();
 builder.Configuration.GetSection("WeatherApi").Bind(weatherapiconfig);
 //====================ADDING INTERFACE TO THE DEPENDENCY==================================//
 builder.Services.AddSingleton<IWeatherApiConfiguration>(weatherapiconfig);
-builder.Services.AddScoped<GetWeatherService>();
+builder.Services.AddScoped<IGetWeatherService, GetWeatherService>();
 builder.Services.AddHttpClient();
 //====================================================================================//
 
