@@ -1,4 +1,7 @@
-﻿Application FrameWork = net7.0
+
+ 
+ 
+Application FrameWork = net7.0
 KEY EXPIRE ON =  21/Aug/2023
 Get Your Api = https://www.weatherapi.com/
 
@@ -31,6 +34,15 @@ Reference = https://code-maze.com/aspnetcore-unit-testing-xunit/
 [Fact] – attribute states that the method should be executed by the test runner
 [Theory] – attribute implies that we are going to send some parameters to our testing code. So, it is similar to the [Fact] attribute, because it states that the method should be executed by the test runner, but additionally implies that we are going to send parameters to the test method
 [InlineData] – attribute provides those parameters we are sending to the test method. If we are using the [Theory] attribute, we have to use the [InlineData] as well
+
+![image](https://github.com/Anasnafees/WeatherApi_Core/assets/75159560/88c94416-1433-4af9-9cc7-24c35df2981c)
+
+![image](https://github.com/Anasnafees/WeatherApi_Core/assets/75159560/8b2ee6bd-d1c3-43f2-a3d3-2f020128ce12)
+
+![image](https://github.com/Anasnafees/WeatherApi_Core/assets/75159560/b9a7f1a1-378c-493e-ada0-60cd611702c1)
+
+
+
 
 
 By Anas Nafees
