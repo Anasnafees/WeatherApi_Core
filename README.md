@@ -30,8 +30,10 @@ Bind The Value Of The Secret Key To The Model Class And Added Model InterFace In
 ==========================================================================================================================================
 
 Added xUnit Project For Basic Unit Testing Of The Application :
+
 Added Interface Of GetWeatherServices To The Dependency Injection
-Using Mock.
+
+Using Mock To Provide Fake Reference .
 
 Reference = https://code-maze.com/aspnetcore-unit-testing-xunit/
 
